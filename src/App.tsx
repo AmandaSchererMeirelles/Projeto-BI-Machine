@@ -28,11 +28,18 @@ const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
               <li>Desbrave a plataforma, faça o Teste grátis!</li>
               <li>Melhor plataforma de BI! </li>
               <li>Dashboards interativos e relatórios precisos!</li>
-              <li>Venha alcançar o real sucesso!</li>
+              <li>Venha alcançar o real SUCESSO!</li>
             </ul>
+
+            <div className='testeButton'>
+                <button type='submit'>
+                 Teste grátis!
+                </button>
+                </div>
             
             </div>
-            <div className='cardright'>
+
+              <div className='cardright'>
               <p>Preencha seus dados:</p>
               <form onSubmit={formLead}>
                <div className='input-form'>
@@ -77,13 +84,13 @@ const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
               </form>
             </div>
           </div>
-          <div>
+          <div className='provaSocial'>
             São mais de 4500 empresas de sucesso comprovado, confiando na nossa parceria!
-            <img src={img} className='logo'/>
-            <img src={calci} className='logo'/>
-            <img src={imec} className='logo'/>
-            <img src={unimed} className='logo'/>
-            <img src={certel} className='logo'/>
+            <img src={img} className='parceiros'/>
+            <img src={calci} className='parceiros'/>
+            <img src={imec} className='parceiros'/>
+            <img src={unimed} className='parceiros'/>
+            <img src={certel} className='parceiros'/>
           </div>
         </div>
       </div>
