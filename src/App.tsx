@@ -5,9 +5,7 @@ import img from './assets/Americanas_Logo.png'
 import calci from './assets/calci.png'
 import unimed from './assets/unimed.png'
 import imec from './assets/logoimec.png'
-
 import certel from './assets/certel.png'
-
 
 function App() {
 const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +13,25 @@ const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
   console.log('enviou!', 
   e.target.name.value,
   e?.target.email.value, e.target.segmento.value, e.target.fone.value)
+  await enviarUsuario( e.target.name.value, e.target.fone.value, e.target.email.value, e.target.segmento.value )
 }
+
+  async function enviarUsuario(nome:string, telefone: string, email: string, segmento: string) {
+    console.log('teste', nome, telefone, email, segmento)
+    let payload = {
+      nome, telefone, email, segmento
+    }
+
+    let response = await fetch('http://localhost:3000/user', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+      }
+
   return (
     <>
       <div>
@@ -32,16 +48,17 @@ const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
             </ul>
 
             <div className='testeButton'>
+            <a href='https://register.bimachine.com/?origin=site&suborigin=home-button-top'>
                 <button type='submit'>
-                 Teste grátis!
-                </button>
+                 Teste grátis!                 
+                </button></a>
                 </div>
             
             </div>
 
               <div className='cardright'>
               <p>Preencha seus dados:</p>
-              <form onSubmit={formLead}>
+              <form id="form" onSubmit={formLead}>
                <div className='input-form'>
                 <p className='label-field'>Name: </p>
                 <input 
@@ -75,7 +92,7 @@ const formLead = async (e: React.FormEvent<HTMLFormElement>) => {
                 </div>
 
                 <div className='submitButton'>
-                <button type='submit'>
+                <button type="submit">
                 Enviar!
                 </button>
                 </div>

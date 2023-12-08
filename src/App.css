@@ -66,6 +66,7 @@ body {
   font-size: 18px;
   font-style: italic;
   font-weight: bold;
+  
 }
 
 .logo{
@@ -94,7 +95,7 @@ body {
 .testeButton{
   display: flex;
   justify-content: center; 
-  width: 50%;
+  width: 80%;
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
